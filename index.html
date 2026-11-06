@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>מתכנן יום ההולדת | DJ Yuval</title>
+<meta name="description" content="ספרו לנו על הילד, על הכיתה ועליכם, ותקבלו תוכנית ליום הולדת שבנויה בדיוק בשבילם. DJ Yuval, ימי הולדת ובת מצוות לגילאי 7 עד 13.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="config.js"></script>
+<script>
+/* הגדרות נגישות שנשמרו, לפני הציור הראשון */
+try{const a=JSON.parse(localStorage.getItem("pp-a11y")||"{}");const c=document.documentElement.classList;if(a.contrast)c.add("a11y-contrast");if(a.noanim)c.add("a11y-noanim");if(a.links)c.add("a11y-links");if(a.font)c.add("a11y-font");if(a.size===1)c.add("a11y-big");if(a.size===2)c.add("a11y-bigger");}catch(e){}
+/* Meta Pixel */
+if(PP.PIXEL_ID){
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init',PP.PIXEL_ID); fbq('track','PageView');
+}
+function track(ev,data,standard){ try{ if(window.fbq) (standard?fbq('track',ev,data||{}):fbq('trackCustom',ev,data||{})); }catch(e){} }
+</script>
+</head>
+<body data-base="">
+<a class="skip" href="#main">דלגו לתוכן הראשי</a>
+<div class="wrap">
+  <header>
+    <img class="brand" src="logo.jpg" width="1050" height="305" alt="DJ Yuval, Party and Events">
+  </header>
+  <main id="main">
+  <h1>יום הולדת מתוכנן בשלוש דקות</h1>
+  <p class="lead">ספרו לנו כמה פרטים על החגיגה, על הילד או הילדה, על הכיתה וגם עליכם, ותקבלו לוח זמנים לערב, פעילויות שמתאימות בדיוק להם ורשימת הכנות.</p>
+
+  <form id="f" novalidate>
+    <div class="progress" role="progressbar" aria-label="התקדמות בטופס" aria-valuemin="1" aria-valuemax="4" aria-valuenow="1" aria-valuetext="שלב 1 מתוך 4"><i class="on" data-step="1"></i><i data-step="2"></i><i data-step="3"></i><i data-step="4"></i></div>
+    <div class="sr-only" aria-live="polite" id="announce"></div>
+    <p class="hint" id="reqhint">כל השדות חובה, חוץ ממה שמסומן אחרת.</p>
+
+    <div id="step1" class="pane">
+    <p class="step">שלב 1 מתוך 4</p>
+    <h2 class="form-sec">קודם כל, מי אתם</h2>
+    <div class="field"><label for="pname">השם שלכם <span class="req" aria-hidden="true">*</span></label><input id="pname" autocomplete="name" placeholder="למשל: מיכל כהן" required aria-required="true"></div>
+    <div class="row">
+      <div class="field"><label for="pphone">טלפון <span class="req" aria-hidden="true">*</span></label><input id="pphone" type="tel" inputmode="tel" autocomplete="tel" dir="ltr" placeholder="050-1234567" required aria-required="true"></div>
+      <div class="field"><label for="pemail">מייל <span class="req" aria-hidden="true">*</span></label><input id="pemail" type="email" inputmode="email" autocomplete="email" dir="ltr" placeholder="name@example.com" required aria-required="true"></div>
+    </div>
+    <button class="btn btn-main" id="next1" type="button">המשך לפרטי החגיגה</button>
+    </div>
+
+    <div id="step2" class="pane" hidden>
+    <p class="step">שלב 2 מתוך 4</p>
+    <h2 class="form-sec">ועכשיו, על החגיגה</h2>
+    <div class="row">
+      <div class="field"><label for="name">שם הילד או הילדה <span class="req" aria-hidden="true">*</span></label><input id="name" autocomplete="off" placeholder="למשל: נועה" required aria-required="true"></div>
+      <div class="field"><label for="age">גיל בחגיגה <span class="req" aria-hidden="true">*</span></label>
+        <select id="age" required aria-required="true"><option>6</option><option>7</option><option>8</option><option selected>9</option><option>10</option><option>11</option><option>12</option><option>13</option></select></div>
+    </div>
+    <div class="row">
+      <div class="field"><label for="kids">כמה ילדים מוזמנים <span class="req" aria-hidden="true">*</span></label><input id="kids" type="number" inputmode="numeric" min="3" max="80" placeholder="למשל: 20" required aria-required="true"></div>
+      <div class="field"><label for="date">תאריך החגיגה <span class="req" aria-hidden="true">*</span></label><input id="date" type="date" required aria-required="true"></div>
+    </div>
+    <div class="row">
+      <div class="field"><label for="start">שעת התחלה <span class="hint" style="display:inline;margin:0">(לא חובה)</span></label><input id="start" type="time"></div>
+      <div class="field"><span class="glabel" id="placeL">איפה חוגגים <span class="req" aria-hidden="true">*</span></span>
+        <div class="chips" role="radiogroup" aria-labelledby="placeL" aria-required="true">
+          <label class="chip"><input type="radio" name="place" value="home" checked><span>בבית</span></label>
+          <label class="chip"><input type="radio" name="place" value="hall"><span>באולם או חדר אירועים</span></label>
+          <label class="chip"><input type="radio" name="place" value="out"><span>בחוץ, בפארק או בגינה</span></label>
+        </div></div>
+    </div>
+    <div class="step-btns">
+      <button class="btn btn-ghost" id="back2" type="button">→ חזרה</button>
+      <button class="btn btn-main" id="next2" type="button">המשך, ספרו לנו על הילד</button>
+    </div>
+    </div>
+
+    <div id="step3" class="pane" hidden>
+    <p class="step">שלב 3 מתוך 4</p>
+    <h2 class="form-sec">ועכשיו, על החוגג או החוגגת ועל הכיתה</h2>
+    <p class="hint" style="margin-bottom:14px">ככל שנכיר יותר, ככה הערב ירגיש שנבנה בדיוק בשבילם. אין תשובות נכונות או לא נכונות.</p>
+
+    <div class="field"><label for="dance">האם הילד או הילדה רגילים לרקוד במסיבות, או יותר ביישנים? <span class="req" aria-hidden="true">*</span></label>
+      <select id="dance" required aria-required="true">
+        <option value="" selected disabled>בחרו תשובה</option>
+        <option value="always">תמיד על הרחבה, אין מה לדאוג</option>
+        <option value="warm">צריך קצת חימום, ואז נכנס לעניינים</option>
+        <option value="friends">רוקד רק כשהחברים הקרובים רוקדים</option>
+        <option value="shy">יותר ביישן, מעדיף להסתכל מהצד</option>
+      </select></div>
+
+    <div class="field"><label for="spotlight">איך הוא או היא עם תשומת לב במרכז? <span class="req" aria-hidden="true">*</span></label>
+      <select id="spotlight" required aria-required="true">
+        <option value="" selected disabled>בחרו תשובה</option>
+        <option value="loves">אוהב להיות במרכז, תנו לו מיקרופון</option>
+        <option value="ok">בסדר עם זה, בלי להגזים</option>
+        <option value="hates">לא נעים לו, עדיף בלי להעלות אותו לבמה לבד</option>
+      </select></div>
+
+    <div class="field"><label for="games">מה יותר מתאים לו או לה? <span class="req" aria-hidden="true">*</span></label>
+      <select id="games" required aria-required="true">
+        <option value="" selected disabled>בחרו תשובה</option>
+        <option value="games">משחקים, תחרויות וחידונים</option>
+        <option value="dance">ריקוד חופשי ומוזיקה חזקה</option>
+        <option value="both">שילוב של שניהם</option>
+        <option value="chill">משהו רגוע יותר, עם הרבה זמן חופשי עם החברים</option>
+      </select></div>
+
+    <div class="field"><label for="wish">האם יש משהו ספציפי שהוא או היא רוצים שיהיה באירוע? <span class="req" aria-hidden="true">*</span></label>
+      <span class="hint" id="h-wish">שיר מסוים, משחק, הפתעה, ריקוד שהם מכירים, כל דבר שעלה בבית. אם אין, כתבו "אין".</span>
+      <textarea id="wish" aria-describedby="h-wish" placeholder="למשל: שיהיה קרב ריקודים, שישמיעו את השיר של..." required aria-required="true"></textarea></div>
+
+    <div class="field"><label for="music">איזה שירים או אמנים הם הכי אוהבים כרגע? <span class="req" aria-hidden="true">*</span></label>
+      <input id="music" placeholder="למשל: נועה קירל, עומר אדם, השירים מהטיקטוק" required aria-required="true"></div>
+
+    <div class="field"><label for="hobbies">במה הם הכי בעניין בתקופה הזו? <span class="req" aria-hidden="true">*</span></label>
+      <span class="hint" id="h-hobbies">תחביבים, סדרות, ספורט, משחקים. זה עוזר לנו לבנות חידון ותחנת צילום שמדברים בשפה שלהם.</span>
+      <input id="hobbies" aria-describedby="h-hobbies" placeholder="למשל: כדורגל, פורטנייט, כדורסל, ריקוד" required aria-required="true"></div>
+
+    <div class="field"><label for="cohesion">האם הכיתה מגובשת? <span class="req" aria-hidden="true">*</span></label>
+      <select id="cohesion" required aria-required="true">
+        <option value="" selected disabled>בחרו תשובה</option>
+        <option value="tight">מאוד מגובשת, כולם חברים של כולם</option>
+        <option value="groups">יש כמה חבורות נפרדות</option>
+        <option value="loose">לא ממש, הרבה ילדים לא מכירים טוב</option>
+        <option value="mixed">המוזמנים הם לא רק מהכיתה</option>
+      </select></div>
+
+    <div class="field"><span class="glabel" id="guestsL">מי מגיע? <span class="req" aria-hidden="true">*</span></span>
+      <div class="chips" role="radiogroup" aria-labelledby="guestsL" aria-required="true">
+        <label class="chip"><input type="radio" name="guests" value="mixed" checked><span>בנים ובנות</span></label>
+        <label class="chip"><input type="radio" name="guests" value="girls"><span>בעיקר בנות</span></label>
+        <label class="chip"><input type="radio" name="guests" value="boys"><span>בעיקר בנים</span></label>
+      </div></div>
+
+    <div class="field"><label for="avoid">יש משהו שחשוב שלא יקרה במסיבה? <span class="req" aria-hidden="true">*</span></label>
+      <span class="hint" id="h-avoid">למשל: לא להעלות אותו לבמה לבד, לא להשמיע שיר מסוים, ילד בכיתה שצריך לשים לב אליו. אם אין, כתבו "אין".</span>
+      <textarea id="avoid" aria-describedby="h-avoid" placeholder="למשל: לא להעלות אותה לבמה לבד" required aria-required="true"></textarea></div>
+
+    <div class="step-btns">
+      <button class="btn btn-ghost" id="back3" type="button">→ חזרה</button>
+      <button class="btn btn-main" id="next3" type="button">המשך, ועכשיו עליכם</button>
+    </div>
+    </div>
+
+    <div id="step4" class="pane" hidden>
+    <p class="step">שלב 4 מתוך 4</p>
+    <h2 class="form-sec">ולסיום, עליכם</h2>
+    <p class="hint" style="margin-bottom:14px">זה האירוע של הילד או הילדה, אבל אתם אלה שמארגנים. כמה שאלות כדי שגם לכם יהיה ערב טוב.</p>
+
+    <div class="field"><label for="prio">מה הכי חשוב לכם באירוע? <span class="req" aria-hidden="true">*</span></label>
+      <span class="hint" id="h-prio">במילים שלכם. שהילד יצא מאושר, שכולם ישתתפו, שאתם תהיו רגועים, כל מה שעולה.</span>
+      <textarea id="prio" aria-describedby="h-prio" placeholder="למשל: שאף ילד לא יישב בצד, ושאני לא אצטרך לנהל כלום" required aria-required="true"></textarea></div>
+
+    <div class="field"><label for="dream">מה חשוב לכם שכן יהיה באירוע, או מה החלום שלכם לערב הזה? <span class="req" aria-hidden="true">*</span></label>
+      <span class="hint" id="h-dream">תארו את הרגע שבו תדעו שזה הצליח.</span>
+      <textarea id="dream" aria-describedby="h-dream" placeholder="למשל: לראות אותו צוחק באמצע הרחבה עם כל החברים" required aria-required="true"></textarea></div>
+
+    <div class="field"><label for="worry">האם יש חששות מסוימים? <span class="req" aria-hidden="true">*</span></label>
+      <span class="hint" id="h-worry">שישתעממו, שהילד יתבייש, רעש, ריבים, שהזמן יימרח, כל דבר שמלחיץ אתכם. אם אין, כתבו "אין".</span>
+      <textarea id="worry" aria-describedby="h-worry" placeholder="למשל: שאחרי האוכל הילדים יתפזרו ולא יחזרו לרחבה" required aria-required="true"></textarea></div>
+
+    <div class="field"><label for="bother">האם יש דברים שיכולים להטריד אתכם ביום האירוע עצמו? <span class="req" aria-hidden="true">*</span></label>
+      <span class="hint" id="h-bother">לוגיסטיקה, ניקיון, שכנים, הורים שנשארים, אלרגיות, כל דבר שמעסיק אתכם. אם אין, כתבו "אין".</span>
+      <textarea id="bother" aria-describedby="h-bother" placeholder="למשל: שהשכנים יתלוננו על הרעש, או ילד עם אלרגיה" required aria-required="true"></textarea></div>
+
+    <div class="field"><label for="role">איזה תפקיד אתם רוצים ביום עצמו? <span class="req" aria-hidden="true">*</span></label>
+      <select id="role" required aria-required="true">
+        <option value="" selected disabled>בחרו תשובה</option>
+        <option value="guest">להיות אורחים, שמישהו אחר ינהל הכול</option>
+        <option value="help">לעזור מהצד, בלי להיות במרכז</option>
+        <option value="lead">להיות חלק מההפעלה, אנחנו אוהבים את זה</option>
+      </select></div>
+
+    <div class="field"><label for="parentsStay">האם הורים נוספים נשארים במסיבה? <span class="req" aria-hidden="true">*</span></label>
+      <select id="parentsStay" required aria-required="true">
+        <option value="" selected disabled>בחרו תשובה</option>
+        <option value="none">לא, רק אנחנו</option>
+        <option value="few">כמה הורים קרובים</option>
+        <option value="many">רוב ההורים נשארים</option>
+      </select></div>
+
+    <div class="field"><label for="past">עשיתם כבר מסיבה כזו בעבר? מה עבד ומה פחות? <span class="req" aria-hidden="true">*</span></label>
+      <span class="hint" id="h-past">אם זו הפעם הראשונה, כתבו "פעם ראשונה".</span>
+      <textarea id="past" aria-describedby="h-past" placeholder="למשל: בשנה שעברה אחרי האוכל הילדים התפזרו ולא חזרו לרחבה" required aria-required="true"></textarea></div>
+
+    <div class="step-btns">
+      <button class="btn btn-ghost" id="back4" type="button">→ חזרה</button>
+      <button class="btn btn-main" id="submitBtn" type="submit">בנו לי תוכנית</button>
+    </div>
+    </div>
+
+    <div class="err" id="err" role="alert"></div>
+  </form>
+  </main>
+
+  <footer>נבנה באהבה על ידי <span class="dj-name"></span> · <a href="accessibility/">הצהרת נגישות</a></footer>
+</div>
+
+<script src="a11y.js"></script>
+<script>
+const DJ_NAME = PP.DJ_NAME, DJ_PHONE = PP.DJ_PHONE, LEAD_ENDPOINT = PP.LEAD_ENDPOINT;
+document.querySelectorAll(".dj-name").forEach(e=>e.textContent=DJ_NAME);
+const $ = s=>document.querySelector(s);
+const val = n=>document.querySelector(`input[name="${n}"]:checked`).value;
+const txt = id=>{ const el=$(id); return el.options ? (el.selectedOptions[0] && el.value ? el.selectedOptions[0].textContent : "") : el.value.trim(); };
+const reduce = ()=>matchMedia("(prefers-reduced-motion:reduce)").matches || document.documentElement.classList.contains("a11y-noanim");
+try{ const t=new Date(); t.setMinutes(t.getMinutes()-t.getTimezoneOffset()); $("#date").min=t.toISOString().slice(0,10); }catch(e){}
+
+/* ===== שדות: שמירה ושחזור ===== */
+const TEXT_IDS=["pname","pphone","pemail","name","age","kids","date","start","dance","spotlight","games","wish","music","hobbies","cohesion","avoid","prio","dream","worry","bother","role","parentsStay","past"];
+const RADIO_NAMES=["place","guests"];
+function saveForm(){
+  const o={}; TEXT_IDS.forEach(id=>o[id]=$("#"+id).value); RADIO_NAMES.forEach(n=>o[n]=val(n));
+  try{ sessionStorage.setItem("pp-form",JSON.stringify(o)); }catch(e){}
+}
+function restoreForm(){
+  try{
+    const o=JSON.parse(sessionStorage.getItem("pp-form")||"null"); if(!o) return false;
+    TEXT_IDS.forEach(id=>{ if(o[id]!=null) $("#"+id).value=o[id]; });
+    RADIO_NAMES.forEach(n=>{ const r=document.querySelector(`input[name="${n}"][value="${o[n]}"]`); if(r) r.checked=true; });
+    return true;
+  }catch(e){ return false; }
+}
+document.querySelectorAll("input,select,textarea").forEach(el=>{ ["input","change"].forEach(ev=>el.addEventListener(ev,()=>clearErr(el))); });
+
+/* ===== שגיאות לכל שדה ===== */
+function ferrOf(el){
+  const f=el.closest(".field")||el.parentElement; let e=f.querySelector(".ferr");
+  if(!e){ e=document.createElement("p"); e.className="ferr"; e.id="e-"+(el.id||Math.random().toString(36).slice(2)); e.hidden=true; f.appendChild(e); }
+  return e;
+}
+function clearErr(el){
+  if(el.getAttribute("aria-invalid")!=="true") return;
+  el.removeAttribute("aria-invalid"); const e=ferrOf(el); e.hidden=true; e.textContent="";
+  const ids=(el.getAttribute("aria-describedby")||"").split(" ").filter(x=>x&&x!==e.id); ids.length?el.setAttribute("aria-describedby",ids.join(" ")):el.removeAttribute("aria-describedby");
+}
+function check(list){
+  let first=null, n=0;
+  list.forEach(([bad,sel,msg])=>{
+    const el=$(sel), e=ferrOf(el);
+    if(bad){
+      n++; el.setAttribute("aria-invalid","true"); e.textContent=msg; e.hidden=false;
+      const ids=(el.getAttribute("aria-describedby")||"").split(" ").filter(Boolean); if(!ids.includes(e.id)) ids.push(e.id); el.setAttribute("aria-describedby",ids.join(" "));
+      if(!first) first=el;
+    } else clearErr(el);
+  });
+  $("#err").textContent = n ? (n===1 ? "יש שדה אחד שצריך להשלים." : `יש ${n} שדות שצריך להשלים.`) : "";
+  if(first){ first.focus(); first.scrollIntoView({behavior:reduce()?"auto":"smooth",block:"center"}); }
+  return !first;
+}
+const empty = sel=>!$(sel).value.trim();
+
+/* ===== ניווט בין שלבים, עם כתובת לכל שלב ===== */
+const panes={1:$("#step1"),2:$("#step2"),3:$("#step3"),4:$("#step4")};
+const firstField={1:"#pname",2:"#name",3:"#dance",4:"#prio"};
+let cur=1, moving=false, maxReached=1;
+try{ maxReached=Math.max(1,Math.min(4,+sessionStorage.getItem("pp-max")||1)); }catch(e){}
+function urlFor(n){ return n===1 ? location.pathname : location.pathname+"?step="+n; }
+function goStep(n,opts={}){
+  if(moving||n===cur) return;
+  const from=panes[cur], to=panes[n];
+  moving=true;
+  const dir=n>cur?"fwd":"back", anim=!reduce() && !opts.instant;
+  document.querySelectorAll(".progress i").forEach(i=>i.classList.toggle("on",+i.dataset.step<=n));
+  const pb=$(".progress"); pb.setAttribute("aria-valuenow",n); pb.setAttribute("aria-valuetext",`שלב ${n} מתוך 4`);
+  $("#err").textContent="";
+  if(opts.push!==false){ history.pushState({step:n},"",urlFor(n)); }
+  document.title=`שלב ${n} מתוך 4 | מתכנן יום ההולדת`;
+  $("#announce").textContent=`שלב ${n} מתוך 4`;
+  if(n>maxReached){ maxReached=n; try{sessionStorage.setItem("pp-max",n)}catch(e){} }
+  track("PlannerStep",{step:n});
+  let shown=false;
+  const show=()=>{
+    if(shown) return; shown=true;
+    from.hidden=true; from.className="pane";
+    to.className="pane"; to.hidden=false; if(anim){ void to.offsetWidth; to.classList.add("enter-"+dir); }
+    const top=$("#f").getBoundingClientRect().top;
+    if(top<0) $("#f").scrollIntoView({behavior:anim?"smooth":"auto"});
+    $(firstField[n]).focus({preventScroll:true});
+    cur=n; moving=false;
+  };
+  if(!anim){ show(); return; }
+  from.classList.add("leave-"+dir);
+  from.addEventListener("animationend",show,{once:true});
+  setTimeout(show,320);
+}
+window.addEventListener("popstate",e=>{
+  const n=(e.state&&e.state.step)||(+new URLSearchParams(location.search).get("step"))||1;
+  if(n>=1&&n<=maxReached) goStep(n,{push:false}); else goStep(1,{push:false});
+});
+
+function step1Next(){
+  const phoneDigits=$("#pphone").value.trim().replace(/[\s\-()]/g,"").replace(/^\+?972/,"0");
+  if(!check([
+    [empty("#pname"),"#pname","נשמח לדעת איך קוראים לכם."],
+    [!/^0\d{8,9}$/.test(phoneDigits),"#pphone","מספר הטלפון לא נראה תקין. למשל: 050-1234567"],
+    [!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($("#pemail").value.trim()),"#pemail","כתובת המייל לא נראית תקינה."]
+  ])) return;
+  saveForm(); track("PlannerContact"); goStep(2);
+}
+function step2Next(){
+  const kids=parseInt($("#kids").value,10);
+  if(!check([
+    [empty("#name"),"#name","איך קוראים לחתן או לכלת השמחה?"],
+    [!kids||kids<3||kids>80,"#kids","מספר הילדים צריך להיות בין 3 ל־80."],
+    [empty("#date"),"#date","בחרו את תאריך החגיגה, זה עוזר לנו לבנות את רשימת ההכנות."]
+  ])) return;
+  saveForm(); goStep(3);
+}
+function step3Next(){
+  if(!check([
+    [empty("#dance"),"#dance","ספרו לנו איך הילד או הילדה על הרחבה, זה משנה את כל התוכנית."],
+    [empty("#spotlight"),"#spotlight","בחרו תשובה."],
+    [empty("#games"),"#games","בחרו תשובה."],
+    [empty("#wish"),"#wish","אם אין בקשה מיוחדת, כתבו 'אין'."],
+    [empty("#music"),"#music","כתבו שיר או אמן אחד לפחות, זה הבסיס לפלייליסט."],
+    [empty("#hobbies"),"#hobbies","כתבו תחביב או תחום עניין אחד לפחות."],
+    [empty("#cohesion"),"#cohesion","ספרו לנו אם הכיתה מגובשת, זה קובע איך נפתח את הערב."],
+    [empty("#avoid"),"#avoid","אם אין משהו כזה, כתבו 'אין'."]
+  ])) return;
+  saveForm(); goStep(4);
+}
+$("#next1").addEventListener("click",step1Next);
+$("#next2").addEventListener("click",step2Next);
+$("#next3").addEventListener("click",step3Next);
+$("#back2").addEventListener("click",()=>goStep(1));
+$("#back3").addEventListener("click",()=>goStep(2));
+$("#back4").addEventListener("click",()=>goStep(3));
+
+$("#f").addEventListener("submit",e=>{
+  e.preventDefault();
+  if(cur===1){ step1Next(); return; }
+  if(cur===2){ step2Next(); return; }
+  if(cur===3){ step3Next(); return; }
+  if(!check([
+    [empty("#prio"),"#prio","ספרו לנו במשפט מה הכי חשוב לכם באירוע."],
+    [empty("#dream"),"#dream","ספרו לנו מה החלום שלכם לערב הזה, גם משפט אחד מספיק."],
+    [empty("#worry"),"#worry","אם אין חששות, כתבו 'אין'. אם יש, זה בדיוק מה שנעזור לכם איתו."],
+    [empty("#bother"),"#bother","אם אין משהו שמטריד, כתבו 'אין'."],
+    [empty("#role"),"#role","בחרו תשובה."],
+    [empty("#parentsStay"),"#parentsStay","בחרו תשובה."],
+    [empty("#past"),"#past","אם זו הפעם הראשונה, כתבו 'פעם ראשונה'."]
+  ])) return;
+  saveForm();
+  const d={
+    parent:{name:$("#pname").value.trim(),phone:$("#pphone").value.trim(),email:$("#pemail").value.trim()},
+    name:$("#name").value.trim(), age:+$("#age").value, kids:parseInt($("#kids").value,10),
+    date:$("#date").value, start:$("#start").value||"17:00", place:val("place"),
+    dance:$("#dance").value, danceText:txt("#dance"),
+    spotlight:$("#spotlight").value, spotlightText:txt("#spotlight"),
+    games:$("#games").value, gamesText:txt("#games"),
+    cohesion:$("#cohesion").value, cohesionText:txt("#cohesion"),
+    guests:val("guests"),
+    wish:$("#wish").value.trim(), music:$("#music").value.trim(), hobbies:$("#hobbies").value.trim(), avoid:$("#avoid").value.trim(),
+    prio:$("#prio").value.trim(), worry:$("#worry").value.trim(),
+    dream:$("#dream").value.trim(), bother:$("#bother").value.trim(),
+    role:$("#role").value, roleText:txt("#role"),
+    parentsStay:$("#parentsStay").value, parentsStayText:txt("#parentsStay"),
+    past:$("#past").value.trim()
+  };
+  const btn=$("#submitBtn"); btn.disabled=true; btn.textContent="שולח…";
+  const payload=sendLead(d);
+  try{ sessionStorage.setItem("pp-lead",JSON.stringify(payload)); sessionStorage.removeItem("pp-form"); sessionStorage.removeItem("pp-max"); }catch(e){}
+  track("PlannerComplete");
+  setTimeout(()=>{ location.href="thanks/"; },150);
+});
+
+/* ===== בניית הסיכום ושליחת הפנייה ===== */
+const none = v=>!v || /^(אין|לא|אין\.|לא\.|-|אין משהו|אין כלום|פעם ראשונה)$/.test(String(v).trim());
+function addMin(hhmm, m){ const [h,mi]=(hhmm||"17:00").split(":").map(Number); const t=h*60+mi+m; return String(Math.floor(t/60)%24).padStart(2,"0")+":"+String(t%60).padStart(2,"0"); }
+function buildPlan(d){
+  const g = d.age<=8 ? "young" : d.age<=10 ? "mid" : "tween";
+  const kid = d.name || "חתן או כלת השמחה";
+  const shy = d.dance==="shy" || d.dance==="friends";
+  const noStage = d.spotlight==="hates";
+  const loose = d.cohesion==="groups" || d.cohesion==="loose" || d.cohesion==="mixed";
+  const ice = loose ? {
+    young:["בינגו היכרות לקטנים","כל ילד מקבל כרטיס עם ציורים: 'מישהו שיש לו כלב', 'מישהו עם אותו צבע חולצה'. רצים, שואלים, מסמנים, ובדרך מכירים את כולם."],
+    mid:["בינגו היכרות","כרטיס עם משבצות כמו 'מישהו שיש לו כלב' או 'מישהו שנולד באותו חודש'. חובה לשאול ילדים שלא מכירים."],
+    tween:["קבוצות מעורבבות ונחשו את השיר","מחלקים לקבוצות אקראיות עם צמידים בצבעים, לא לפי חבורות. שלוש שניות מכל שיר, הקבוצה שמנחשת ראשונה לוקחת נקודה."]
+  }[g] : {
+    young:["פסלים מוזיקליים","המוזיקה עוצרת וכולם קופאים. מי שזז עוזר למנחה לבחור את השיר הבא."],
+    mid:["שרשרת ריקוד","כל ילד מוסיף תנועה אחת, וכולם חוזרים על כל השרשרת. עד שנגמר הסבב כולם כבר צוחקים ורוקדים."],
+    tween:["נחשו את השיר","שתי קבוצות, שלוש שניות מכל שיר. הקבוצה שמנחשת ראשונה מקבלת נקודה."]
+  }[g];
+  const games = d.games || "both";
+  const main = {
+    games:["תחנות משחקים וחידון מוזיקלי","מתחלקים לקבוצות ועוברים בין תחנות: חידון על "+(d.hobbies||"הדברים שהילדים אוהבים")+", משחקי מהירות ומשימות קצרות. בסוף: גמר על הבמה."],
+    dance:["קרב ריקודים","מחלקים לקבוצות, כל קבוצה מקבלת שיר ושתי דקות להכין כניסה. שופטים, ניקוד ומנצחים, והמוזיקה ממשיכה ישר לרחבה."],
+    both:["ריקוד טרנדי בקבוצות","לומדים יחד ריקוד מהרשתות, מתחלקים לקבוצות ועושים קרב ריקודים עם שופטים ומשחק מהיר בין סבב לסבב."],
+    chill:["תחנת צילום ומשחקי שולחן גדולים","אווירה רגועה: תחנת צילום עם אביזרים, משחקים גדולים שאפשר להצטרף ולצאת, ומוזיקה ברקע. מי שרוצה לרקוד, הרחבה פתוחה."]
+  }[games];
+  const cakeDesc = noStage ? `${kid} עם החברים הקרובים מסביב, בלי במה ובלי מיקרופון. נרות, שירה של כולם ותמונה קבוצתית.` : `${kid} במרכז, נרות, ברכות ותמונה קבוצתית.`;
+  const musicDesc = !none(d.music) ? `השירים של ${d.music} והבקשות שהילדים שלחו מראש, ותחרות 'הריקוד הכי מצחיק'.` : "השירים שהילדים ביקשו מראש, ותחרות 'הריקוד הכי מצחיק'.";
+  const timeline = [
+    [0,"קבלת פנים","מוזיקה ברקע, תחנת צילום ושם על מדבקה לכל ילד."],
+    [15,ice[0],ice[1]],
+    [35,main[0],main[1]],
+    [80,"הפסקת אוכל","פיצה או כריכים, שתייה ופירות. מוזיקה רגועה ברקע."],
+    [105,"עוגה ושירת יום הולדת",cakeDesc],
+    [120,"רחבת ריקודים",musicDesc],
+    [145,"סיום","שקיות הפתעה ביציאה והורים אוספים."]
+  ].map(([m,title,desc])=>({time:addMin(d.start,m),title,desc}));
+  const acts = [];
+  if(!none(d.wish)) acts.push({name:`הבקשה של ${kid}`,desc:d.wish+" , זה נכנס לתוכנית, וזה הדבר הראשון שנבנה סביבו את הערב."});
+  acts.push({name:main[0],desc:main[1]});
+  acts.push({name:ice[0],desc:ice[1]});
+  if(shy) acts.push({name:"ריקוד קבוצתי, לא סולו",desc:`כל פעילות ריקוד היא בקבוצות או עם כל הכיתה. ${kid} לא צריך לעמוד לבד מול כולם כדי להיות חלק מהעניין.`});
+  acts.push(
+    g==="young" ? {name:"בועות סבון ענקיות",desc:"תחנה שקטה לילדים שצריכים הפסקה מהרעש."}
+    : g==="mid" ? {name:noStage?"ריקוד הפתעה של כל הכיתה":"כוריאוגרפיה לחתן או לכלה",desc:noStage?`כל הכיתה לומדת ריקוד קצר יחד ו${kid} בתוכו, לא מולו.`:`החברים מכינים ריקוד הפתעה ל${kid} ומציגים אחרי העוגה.`}
+    : {name:"בקשות שירים מראש",desc:"כל מוזמן שולח שיר אחד בהרשמה, והפלייליסט נבנה מהם."}
+  );
+  acts.push({name:!none(d.hobbies)?`תחנת צילום בנושא ${d.hobbies.split(",")[0].trim()}`:"תחנת צילום",desc:"רקע צבעוני ואביזרים מצחיקים. ההורים יקבלו תמונות שוות בלי מאמץ."});
+  const tips=[];
+  if(d.kids>25) tips.push("מעל 25 ילדים, מפעיל אחד עם מערכת סאונד טובה מחזיק את כולם הרבה יותר טוב מהורים שמנסים לארגן משחקים.");
+  if(shy) tips.push(`${kid} יותר ביישן? זה בסדר גמור. הסוד הוא להתחיל עם משחקים שבהם כולם זזים ביחד, ולא להפנות זרקור. בדרך כלל אחרי 20 דקות הביישנות נעלמת.`);
+  if(loose) tips.push("כשהכיתה לא מגובשת, הפעילות הראשונה חשובה פי שתיים. מערבבים קבוצות בכוונה, ולא נותנים לחבורות להתיישב בפינות.");
+  if(d.cohesion==="mixed") tips.push("כשמגיעים ילדים מכמה מקומות, עוזר שלכל ילד יש שם על מדבקה ושהמשחק הראשון מחייב לשאול שם של מישהו חדש.");
+  if(g==="tween") tips.push("בגילאי 11 עד 13 הילדים רוצים להרגיש גדולים. מוזיקה עדכנית ופעילות שלא מרגישה 'ילדותית' עושות את כל ההבדל.");
+  if(d.guests==="girls" && g!=="young") tips.push("מסיבה של בעיקר בנות בגיל הזה: ריקודים מהרשתות וכוריאוגרפיות קבוצתיות עובדים מצוין, ותחנת צילום היא חובה.");
+  if(d.guests==="boys" && g!=="young") tips.push("מסיבה של בעיקר בנים: תחרויות וקבוצות עם ניקוד מחזיקות אנרגיה לאורך כל הערב הרבה יותר מריקוד חופשי.");
+  if(d.place==="out") tips.push("בחוץ כדאי לבדוק נקודת חשמל למערכת הסאונד ותוכנית גיבוי לגשם.");
+  if(!none(d.avoid)) tips.push("רשמנו לעצמנו: "+d.avoid);
+  const wt=(d.worry||"")+" "+(d.prio||"");
+  const w=[];
+  if(/שעמ|שתעמ|משעמ/.test(wt)) w.push("bored");
+  if(/בצד|לא ישתתפ|לא משתתפ/.test(wt)) w.push("side");
+  if(/בייש/.test(wt)) w.push("shy");
+  if(/רעש|בלגן|ווליום/.test(wt)) w.push("noise");
+  if(/ריב|מסתדר|מריב/.test(wt)) w.push("fights");
+  if(/זמן|ימרח|נמרח|יגמר/.test(wt)) w.push("time");
+  if(/סאונד|ציוד|תקל|רמקול|מיקרופון/.test(wt)) w.push("tech");
+  if(/הורים/.test(wt)) w.push("parents");
+  if(w.includes("bored")) tips.push("חוששים שישתעממו? בגלל זה התוכנית בנויה בבלוקים של 15 עד 25 דקות, ובכל בלוק קורה משהו חדש. ילדים לא משתעממים כשיש מישהו שמוביל.");
+  if(w.includes("side")) tips.push("ילדים שיושבים בצד: הפתיחה מחייבת את כולם לזוז, והפעילות המרכזית היא בקבוצות. אין רגע שבו אפשר 'לא להשתתף' בלי להישאר לבד.");
+  if(w.includes("shy")&&!shy) tips.push(`חוששים ש${kid} יתבייש? כל פעילות ריקוד בתוכנית היא בקבוצות, ואף אחד לא עולה לבמה לבד בלי שבחר בזה.`);
+  if(w.includes("noise")) tips.push("רעש ובלגן: מי שמוביל שולט בווליום לפי הרגע, ובהפסקת האוכל המוזיקה יורדת. בלגן נוצר מהיעדר מסגרת, לא מהמוזיקה.");
+  if(w.includes("fights")) tips.push("ריבים: בחלוקה לקבוצות מערבבים בכוונה, ומי שמפעיל קובע את הקבוצות, לא הילדים. זה מוריד את רוב הדרמות.");
+  if(w.includes("time")) tips.push("לוח הזמנים בנוי לשעתיים וחצי עם גמישות: אם הרחבה בוערת מאריכים אותה, ואם הילדים גמורים מקדימים את העוגה.");
+  if(w.includes("tech")) tips.push("ציוד: מערכת סאונד עם גיבוי, רמקול נוסף ומיקרופון אלחוטי. כדאי לבדוק נקודת חשמל מראש.");
+  if(w.includes("parents")) tips.push("ההורים האחרים: כשהמסיבה זורמת ומישהו מוביל אותה, ההורים הם אלה ששואלים בסוף 'מי היה המפעיל שלכם?'.");
+  if(!none(d.worry) && !w.length) tips.push("רשמנו את החשש שלכם ונבנה את הערב בהתאם: "+d.worry);
+  if(!none(d.bother)) tips.push("ביום עצמו נשים לב ל: "+d.bother);
+  if(d.role==="guest") tips.push("רציתם להיות אורחים? אז התוכנית מניחה שמישהו אחר מנהל את הזמן, והתפקיד שלכם הוא לצלם וליהנות.");
+  if(d.role==="lead") tips.push("אתם אוהבים להיות חלק מההפעלה? מעולה. שמרנו לכם את השופטים בקרב הריקודים ואת הכרזת המנצחים.");
+  if(d.parentsStay==="many") tips.push("כשרוב ההורים נשארים, שווה להכין להם פינה עם קפה וכיסאות רחוק מהרמקולים, כדי שהרחבה תישאר של הילדים.");
+  if(!none(d.past)) tips.push("מהניסיון הקודם שלכם: "+d.past);
+  return {kid,timeline,acts,tips};
+}
+function summaryText(d,p){
+  const dateStr = new Date(d.date+"T12:00:00").toLocaleDateString("he-IL");
+  const lines = [];
+  lines.push(`היי ${d.parent.name.split(" ")[0]}, הנה הסיכום ליום ההולדת של ${p.kid} (גיל ${d.age}, ${d.kids} ילדים, ${dateStr}):`);
+  lines.push(""); lines.push("לוח הזמנים של הערב:");
+  p.timeline.forEach(t=>lines.push(`${t.time} ${t.title}`));
+  lines.push(""); lines.push("פעילויות שבניתי במיוחד:");
+  p.acts.forEach(a=>lines.push(`• ${a.name}: ${a.desc}`));
+  if(p.tips.length){ lines.push(""); lines.push("כמה דברים ששווה לדעת:"); p.tips.slice(0,4).forEach(t=>lines.push(`• ${t}`)); }
+  lines.push(""); lines.push(`אשמח לדבר ולסגור את התאריך. יובל, ${DJ_NAME}`);
+  return lines.join("\n");
+}
+function sendLead(d){
+  let summary = "";
+  try{ summary = summaryText(d, buildPlan(d)); }catch(e){}
+  const parentDigits = d.parent.phone.replace(/[\s\-()]/g,"").replace(/^0/,"972").replace(/^\+/,"");
+  const payload = {...d, at:new Date().toISOString(), summary, waToParent:`https://wa.me/${parentDigits}?text=${encodeURIComponent(summary)}`, page:location.href};
+  if(LEAD_ENDPOINT){
+    const body = JSON.stringify(payload);
+    let sent=false;
+    try{ sent = !!(navigator.sendBeacon && navigator.sendBeacon(LEAD_ENDPOINT, new Blob([body],{type:"text/plain"}))); }catch(e){}
+    if(!sent) fetch(LEAD_ENDPOINT,{method:"POST",mode:"no-cors",keepalive:true,headers:{"Content-Type":"text/plain"},body}).catch(()=>{});
+  }
+  return payload;
+}
+
+/* ===== טעינה: שחזור שלב מהכתובת ===== */
+(function init(){
+  const restored=restoreForm();
+  const want=+new URLSearchParams(location.search).get("step")||1;
+  if(restored && want>1 && want<=maxReached){ goStep(want,{push:false,instant:true}); history.replaceState({step:want},"",urlFor(want)); }
+  else { history.replaceState({step:1},"",urlFor(1)); track("PlannerStep",{step:1}); }
+})();
+</script>
+</body>
+</html>
